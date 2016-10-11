@@ -21,6 +21,9 @@ namespace pruebas
             //wheret();
         }
         
+
+
+
         PictureBox CartasJuego;// = new PictureBox();
         public PictureBox pb()
         {
@@ -164,7 +167,7 @@ namespace pruebas
 
         private void Letter_S_KeyPress(object sender, KeyPressEventArgs e)
         {
-            var a = 1;
+            //var a = 1;
         }
 
         private void Letter_S_MouseClick(object sender, MouseEventArgs e)

@@ -25,3 +25,6 @@ C:\Users\asoftware8\Documents\Visual Studio 2012\Projects\variado_2012\pruebas\p
 C:\Users\asoftware8\Documents\Visual Studio 2012\Projects\variado_2012\pruebas\pruebas\obj\Debug\pruebas.Letter_S2.resources
 C:\Users\asoftware8\Documents\Visual Studio 2012\Projects\variado_2012\pruebas\pruebas\obj\Debug\pruebas.Admin_Games.resources
 C:\Users\asoftware8\Documents\Visual Studio 2012\Projects\variado_2012\pruebas\pruebas\obj\Debug\pruebas.Sopa_Letras.resources
+C:\Users\asoftware8\Documents\Visual Studio 2012\Projects\variado_2012\pruebas\pruebas\obj\Debug\pruebas.Admin_Sl.resources
+C:\Users\asoftware8\Documents\Visual Studio 2012\Projects\variado_2012\pruebas\pruebas\obj\Debug\pruebas.Sopa_Letras2.resources
+C:\Users\asoftware8\Documents\Visual Studio 2012\Projects\variado_2012\pruebas\pruebas\obj\Debug\pruebas.Admin_Sl_Con.resources

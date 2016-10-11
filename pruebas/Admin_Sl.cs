@@ -1,31 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-
+using System.Windows.Forms;
 
 namespace pruebas
 {
-    class Pruebas_Gen
+    public partial class Admin_Sl : Form
     {
+        public Admin_Sl()
+        {
+            InitializeComponent();
+            pan22();
+        }
+
+        TextBox tb1;
+        public TextBox Txt_Box2()
+        {
+            tb1 = new TextBox();
+            tb1.Dock = DockStyle.Fill;
+            tb1.MaxLength = 1;
+            tb1.TextAlign = HorizontalAlignment.Center;
+            tb1.BorderStyle = BorderStyle.None;
+            tb1.Multiline = true;
+            tb1.TextChanged += textBox1_TextChanged;
+            tb1.Font = new Font("Microsoft Sans Serif", 12f, System.Drawing.FontStyle.Bold);
+            return tb1;
+        }
+
         List<Grid_0> gr1 = new List<Grid_0>();
-        List<string> gr2 = new List<string>();
-        List<Grid_0> gr1b = new List<Grid_0>();
-        
+        List<Grid_0> gr2 = new List<Grid_0>();
+
+
         public class Grid_0
         {
             public int a { get; set; }
             public int b { get; set; }
-            //public bool v { get; set; }
             public string v { get; set; }
             public string r { get; set; }
         }
 
-        //-----Listas de pruebas
-        public void List1()
+        public void t2()
         {
             gr1.Clear();
             gr1.Add(new Grid_0 { a = 0, b = 0, v = "A", r = "00" }); gr1.Add(new Grid_0 { a = 1, b = 0, v = "K", r = "10" }); gr1.Add(new Grid_0 { a = 2, b = 0, v = "U", r = "20" }); gr1.Add(new Grid_0 { a = 3, b = 0, v = "F", r = "30" }); gr1.Add(new Grid_0 { a = 4, b = 0, v = "P", r = "40" }); gr1.Add(new Grid_0 { a = 5, b = 0, v = "A", r = "50" }); gr1.Add(new Grid_0 { a = 6, b = 0, v = "K", r = "60" }); gr1.Add(new Grid_0 { a = 7, b = 0, v = "U", r = "70" }); gr1.Add(new Grid_0 { a = 8, b = 0, v = "F", r = "80" }); gr1.Add(new Grid_0 { a = 9, b = 0, v = "P", r = "90" });
@@ -40,82 +59,118 @@ namespace pruebas
             gr1.Add(new Grid_0 { a = 0, b = 9, v = "J", r = "09" }); gr1.Add(new Grid_0 { a = 1, b = 9, v = "T", r = "19" }); gr1.Add(new Grid_0 { a = 2, b = 9, v = "E", r = "29" }); gr1.Add(new Grid_0 { a = 3, b = 9, v = "O", r = "39" }); gr1.Add(new Grid_0 { a = 4, b = 9, v = "Z", r = "49" }); gr1.Add(new Grid_0 { a = 5, b = 9, v = "J", r = "59" }); gr1.Add(new Grid_0 { a = 6, b = 9, v = "T", r = "69" }); gr1.Add(new Grid_0 { a = 7, b = 9, v = "E", r = "79" }); gr1.Add(new Grid_0 { a = 8, b = 9, v = "O", r = "89" }); gr1.Add(new Grid_0 { a = 9, b = 9, v = "Z", r = "99" });
         }
 
-        public void List2()
+        public void pan22()
         {
-            gr1b.Clear();
-            gr1b.Add(new Grid_0 { a = 0, b = 0, v = "A", r = "00" }); gr1b.Add(new Grid_0 { a = 1, b = 0, v = "K", r = "10" }); gr1b.Add(new Grid_0 { a = 2, b = 0, v = "U", r = "20" }); gr1b.Add(new Grid_0 { a = 3, b = 0, v = "F", r = "30" }); gr1b.Add(new Grid_0 { a = 4, b = 0, v = "P", r = "40" }); gr1b.Add(new Grid_0 { a = 5, b = 0, v = "A", r = "50" }); gr1b.Add(new Grid_0 { a = 6, b = 0, v = "K", r = "60" }); gr1b.Add(new Grid_0 { a = 7, b = 0, v = "U", r = "70" }); gr1b.Add(new Grid_0 { a = 8, b = 0, v = "F", r = "80" }); gr1b.Add(new Grid_0 { a = 9, b = 0, v = "P", r = "90" });
-            gr1b.Add(new Grid_0 { a = 0, b = 1, v = "B", r = "01" }); gr1b.Add(new Grid_0 { a = 1, b = 1, v = "L", r = "11" }); gr1b.Add(new Grid_0 { a = 2, b = 1, v = "V", r = "21" }); gr1b.Add(new Grid_0 { a = 3, b = 1, v = "G", r = "31" }); gr1b.Add(new Grid_0 { a = 4, b = 1, v = "Q", r = "41" }); gr1b.Add(new Grid_0 { a = 5, b = 1, v = "B", r = "51" }); gr1b.Add(new Grid_0 { a = 6, b = 1, v = "L", r = "61" }); gr1b.Add(new Grid_0 { a = 7, b = 1, v = "V", r = "71" }); gr1b.Add(new Grid_0 { a = 8, b = 1, v = "G", r = "81" }); gr1b.Add(new Grid_0 { a = 9, b = 1, v = "Q", r = "91" });
-        }
-        //-----Listas de pruebas
-
-        public void B_Contains_start_end()
-        {
-            //comienza con
-            var test1 = gr1.Where(x => x.r.StartsWith("0")).ToList();
-            //termina con
-            var test2 = gr1.Where(x => x.r.EndsWith("0")).ToList();
-            //contiene
-            var test3 = gr1.Where(x => x.r.Contains("0")).ToList();
-        }
-
-        public void Intersec_Join()
-        {
-            //var test2 = Vert.Intersect(Hori).ToList();//.Where(x=>x.ToString() == "10").ToList();
-            var test3 = gr1.Select(x => x.r).Intersect(gr1b.Select(y => y.r)).ToList();
-        }
-
-        public void Comparar_dos_listas()
-        {
-            var b = gr1b.Select(x => new { x.a, x.b, x.r, x.v }).ToList();
-            var b1 = gr1.Select(x => new { x.a, x.b, x.r, x.v }).ToList();
-
-            var b2 = b.SequenceEqual(b1);
-
-            var b3 = gr1b.Select(x => new { x.a, x.b, x.r, x.v }).SequenceEqual(gr1.Select(x => new { x.a, x.b, x.r, x.v }));
-        }
-
-        //----------------------------------------------------------------------------
-        //test conexion mysql
-        //----------------------------------------------------------------------------
-
-        public static string conexion = string.Format("server=192.168.222.131; database=Joec; Uid=Joec; pwd=joec2107;");
-        public MySqlConnection conectar = new MySqlConnection(conexion);
-        //public NpgsqlDataAdapter psqlad;
-        public MySqlDataAdapter myslad;
-        
-        public List<System.Data.DataRow> mysql_select()
-        {
-            DataSet ds = new DataSet();
-            string tabl = "Laber";
-            string query = "SELECT * FROM " + tabl + "";
-            myslad = new MySqlDataAdapter(query, conexion);
-            myslad.Fill(ds);
-            return ds.Tables[0].AsEnumerable().ToList();
-        }
-
-        public void Test_GOTO()
-        {
-            int dummy = 0;
-            for (int a = 0; a < 10; a++)
+            t2();
+            TableLayoutPanel tablaPanel = new TableLayoutPanel();
+            tablaPanel.RowCount = 10;
+            tablaPanel.ColumnCount = 10;
+            for (int i = 0; i < 10; i++)
             {
-                for (int y = 0; y < 10; y++) // Run until condition.
-                {
-                    for (int x = 0; x < 10; x++) // Run until condition.
-                    {
-                        if (x == 5 && y == 5)
-                        {
-                            goto Outer;
-                        }
-                    }
-                    dummy++;
-                }
-            Outer:
-                continue;
+                var Porcentaje = 150f / (float)10 - 10;
+                tablaPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, Porcentaje));
+                tablaPanel.RowStyles.Add(new RowStyle(SizeType.Percent, Porcentaje));
             }
+            //----
+
+            foreach (var item in gr1)
+            {
+                var tb1 = Txt_Box2();
+                tb1.Name = item.r.ToString();
+                tablaPanel.Controls.Add(tb1, item.a, item.b);
+            }
+
+            tablaPanel.Dock = DockStyle.Fill;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(tablaPanel);
         }
 
-         
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            ((TextBox)sender).Text = ((TextBox)sender).Text.ToUpper();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var Ms = abc();
+            gr2.Clear();
+            
+            //ingresado
+            panel1.Controls[0].Controls.OfType<TextBox>().ToList().Where(x => x.Text.Trim() != "").ToList().ForEach(y => {
+                var pos1 = y.Name.ToArray();
+                gr2.Add(new Grid_0
+                {
+                    a = Convert.ToInt16(pos1[0].ToString()),
+                    b = Convert.ToInt16(pos1[1].ToString()),
+                    v = y.Text.ToString(),
+                    r = y.Name.ToString()
+                });
+            });
+
+            ////aleatorio
+            //panel1.Controls[0].Controls.OfType<TextBox>().ToList().Where(x => x.Text.Trim() == "").ToList().ForEach(y => {
+            //    var pos1 = y.Name.ToArray();
+            //    gr2.Add(new Grid_0
+            //    {
+            //        a = Convert.ToInt16(pos1[0].ToString()),
+            //        b = Convert.ToInt16(pos1[1].ToString()),
+            //        v = Ms[rnd.Next(0, Ms.Count)].ToString(),
+            //        r = y.Name.ToString()
+            //    });
+            //});
+        }
+        Random rnd = new Random();
+        public List<string> abc()
+        {
+            List<string> abc1 = new List<string>();
+            abc1.Add("A");
+            abc1.Add("B");
+            abc1.Add("C");
+            abc1.Add("D");
+            abc1.Add("E");
+            abc1.Add("F");
+            abc1.Add("G");
+            abc1.Add("H");
+            abc1.Add("I");
+            abc1.Add("J");
+            abc1.Add("K");
+            abc1.Add("L");
+            abc1.Add("M");
+            abc1.Add("N");
+            abc1.Add("O");
+            abc1.Add("P");
+            abc1.Add("Q");
+            abc1.Add("R");
+            abc1.Add("S");
+            abc1.Add("T");
+            abc1.Add("U");
+            abc1.Add("V");
+            abc1.Add("W");
+            abc1.Add("X");
+            abc1.Add("Y");
+            abc1.Add("z");
+            return abc1;
+        }
+
+        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pan22();
+            var Ms = abc();
+            gr2.ForEach(x =>
+            {
+                panel1.Controls[0].Controls.OfType<TextBox>().ToList().Single(y => y.Name.ToString() == x.r.ToString()).Text = x.v.ToString();
+            });
+
+            //aleatorio
+            panel1.Controls[0].Controls.OfType<TextBox>().ToList().Where(x => x.Text.Trim() == "").ToList().ForEach(y =>
+            {
+                y.Text = Ms[rnd.Next(0, Ms.Count)].ToString();
+            });
+        }
 
 
+        //-----------GENERICS
+        
     }
 }

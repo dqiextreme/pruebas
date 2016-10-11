@@ -53,6 +53,18 @@
     <Compile Include="Admin_Games.Designer.cs">
       <DependentUpon>Admin_Games.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Sl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Sl.Designer.cs">
+      <DependentUpon>Admin_Sl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Sl_Con.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_Sl_Con.Designer.cs">
+      <DependentUpon>Admin_Sl_Con.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,8 +123,20 @@
     <Compile Include="Sopa_Letras.Designer.cs">
       <DependentUpon>Sopa_Letras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sopa_Letras2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sopa_Letras2.designer.cs">
+      <DependentUpon>Sopa_Letras2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin_Games.resx">
       <DependentUpon>Admin_Games.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Sl.resx">
+      <DependentUpon>Admin_Sl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Sl_Con.resx">
+      <DependentUpon>Admin_Sl_Con.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -150,6 +174,9 @@
     </Compile>
     <EmbeddedResource Include="Sopa_Letras.resx">
       <DependentUpon>Sopa_Letras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sopa_Letras2.resx">
+      <DependentUpon>Sopa_Letras2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
